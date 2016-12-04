@@ -33,7 +33,7 @@ auto str_to_vec(string str) -> vector<string>
 auto new_file(std::string file_name, uint_fast64_t file_size) -> void
 {
 	std::string names[] = { "Ibragim", "Anton", "Vika", "Dima", "Kozan", "Daler", "Aleksandr", "Oleg" };
-	std::string surnames[] = { "Nurmagomedov", "Perunov", "Bardina",	"Rybko", "Geopika", "Boltabaev", "Nikitin", "Velikiy", "Magomedov", "Vershinin", "Gigin" };
+	std::string surnames[] = { "Nurmagomedov", "Perunov", "Bardina", "Rybko", "Geopika", "Boltabaev", "Nikitin", "Velikiy", "Magomedov", "Vershinin", "Gigin" };
 	std::ofstream file;
 	file.open(file_name);
 	if (file.good())
