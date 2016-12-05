@@ -33,7 +33,7 @@ void sort_it(const string input_name, const string output_name, const unsigned l
 			getline(fin, s);
 			v.push_back(s);
 		}
-		sort(v.begin(), v.end());
+		sort_it(v.begin(), v.end());
 		for (auto i : v)
 		{
 			if (i != "") fout_ << i<<endl;
