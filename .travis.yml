@@ -12,7 +12,8 @@ cache:
 
 matrix:
     include:
-
+        - os: osx
+          compiler: clang
         - os: linux
           compiler: gcc
           env: COMPILER_NAME=gcc CXX=g++-4.9 CC=gcc-4.9
@@ -68,6 +69,6 @@ script:
     - BUILD_DIR="${TRAVIS_BUILD_DIR}/build"
     - mkdir -p "${BUILD_DIR}"
     - cd "${BUILD_DIR}"
-    - cmake -DGLOBAL_PROJECT_NAME=stack ..
+    - cmake -DGLOBAL_PROJECT_NAME=sort_by_TAHK ..
     - make
     - make test ARGS="-VV"
