@@ -22,13 +22,14 @@ public:
 
 class RUNNER {
 public:
-	~RUNNER();
+	
 	RUNNER(string name_main_file,size_t buff_size);
-	auto make_file(string name_file)->void;
-	auto file_size(string name_file)->size_t;
-	auto remove_temp_files()->void;
-	auto file_sort()->void;
 	auto division()->void;
+	auto file_size(string name_file)->size_t;
+	auto make_file(string name_file)->void;
+	auto file_sort()->void;
+	auto remove_temp_files()->void;
+	~RUNNER();
 private:
 	fstream file;
 	size_t buffer, count_of_files, closed_files;
@@ -60,7 +61,7 @@ inline auto RUNNER::make_file(string name_file)->void {
 	lines.clear();
 }
 
-inline auto B::file_size(string name_file)->size_t {
+inline auto RUNNER::file_size(string name_file)->size_t {
 	long fsize;
 	ifstream temp(name_file);
 	temp.seekg(0, ios::end);
@@ -75,7 +76,7 @@ inline auto RUNNER::remove_temp_files()->void {
 			throw;
 		}
 		else {
-			cout << "Gj";
+			cout << "MS";
 		}
 	}
 }
