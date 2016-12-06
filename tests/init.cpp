@@ -1,26 +1,37 @@
-#include <sort.cpp>
+#include "sort_test.cpp"
 #include <catch.hpp>
-#include <string>
 #include <iostream>
+#include <string>
 #include <fstream>
+#include <locale> 
 using namespace std;
+ 
+SCENARIO("count111", "[count1111]"){
+ setlocale(LC_ALL, "Russian");
+ B obj("name.txt",1048576);
+ ifstream hay("out.txt");
+ifstream file("sort.txt");
 
-SCENARIO("zzz", "[zzz]")
-{
-  sort_it("in.txt", "out.txt", 120);
-	string *a = new string[21], *b = new string[21];
-	bool x = false;
-	ifstream f1("out.txt"), f2("test.txt");
-	for (int i = 0; i < 21; ++i)
-	{
-		getline(f1, a[i]);
-		getline(f2, b[i]);
-	}
-	size_t x_ = 0;
-	for (int i = 0; i < 21; ++i)
-	{
-		if (a[i] == b[i]) ++x_;
-	}
-	if (x_ == 21) x = true;
-  REQUIRE(x);
-} 
+int i=0;
+ bool p=true;
+ string s1,s2;
+ while (!hay.eof()&&!file.eof()){
+getline(file,s1);
+ getline(hay,s2);
+
+  i++;
+  if (s1!=s2){
+  p=false;
+   cout<<i<<endl;
+   cout<<s1<<endl;
+   cout<<s2<<endl;
+   break;
+  }
+ }
+  file.close();
+ hay.close();
+ 
+ 
+
+  REQUIRE(p==true);
+}
