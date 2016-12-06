@@ -7,7 +7,6 @@
 #include <algorithm> 
 #include <cstdio> 
 #include <queue> 
-
 using namespace std;
 
 struct A {
@@ -73,7 +72,6 @@ inline auto B::file_size(string name_file)->size_t {
 }
 
 
-
 inline auto B::remove_temp_files()->void {
 	for (int i = 0; i < file_names.size(); ++i) {
 		if (remove(file_names[i].c_str()) == -1) {
@@ -83,15 +81,10 @@ inline auto B::remove_temp_files()->void {
 			cout << "Gj";
 		}
 	}
-
 }
-
-
-
 
 inline auto B::file_sort()->void {
 	ofstream f12("out.txt");
-	
 	string str;
 	for (int i = 0; i < count_of_files; ++i) {
 		ifstream* f_ = new ifstream(file_names[i]);
@@ -99,12 +92,10 @@ inline auto B::file_sort()->void {
 		A ff(str, f_);
 		end_sorting.push(ff);
 	}
-	
 	while (!end_sorting.empty()) {
 		A ff = end_sorting.top();
 		end_sorting.pop();
 		if (ff.str != "") f12 << ff.str << endl;
-
 		if (!(*ff.f).eof())
 		{
 			getline(*ff.f, ff.str);
@@ -117,9 +108,7 @@ inline auto B::file_sort()->void {
 	}
 	f12.close();
 	remove_temp_files();
-	
 }
-
 
 inline auto B::division()->void {
 	string line_of_file;
@@ -127,8 +116,6 @@ inline auto B::division()->void {
 	while (!file.eof()) {
 		getline(file, line_of_file);
 		temp_size_files += line_of_file.size();
-
-
 		if (temp_size_files <= buffer) {
 			lines.push_back(line_of_file);
 		}
@@ -145,6 +132,5 @@ inline auto B::division()->void {
 		count_of_files++;
 		make_file(to_string(count_of_files) + ".txt");
 	}
-
 	file_sort();
 }
