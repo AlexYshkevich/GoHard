@@ -38,8 +38,6 @@ private:
 	priority_queue<A> end_sorting;
 };
 
-
-
 inline B::~B() {
 	file_names.clear();
 }
@@ -72,8 +70,6 @@ inline auto B::file_size(string name_file)->size_t {
 	return fsize;
 }
 
-
-
 inline auto B::remove_temp_files()->void {
 	for (int i = 0; i < file_names.size(); ++i) {
 		if (remove(file_names[i].c_str()) == -1) {
@@ -85,9 +81,6 @@ inline auto B::remove_temp_files()->void {
 	}
 
 }
-
-
-
 
 inline auto B::file_sort()->void {
 	ofstream f12("out.txt");
@@ -119,7 +112,6 @@ inline auto B::file_sort()->void {
 	remove_temp_files();
 	
 }
-
 
 inline auto B::division()->void {
 	string line_of_file;
