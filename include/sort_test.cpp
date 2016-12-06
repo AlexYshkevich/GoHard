@@ -37,8 +37,6 @@ private:
 	priority_queue<A> end_sorting;
 };
 
-
-
 inline B::~B() {
 	file_names.clear();
 }
@@ -127,7 +125,6 @@ inline auto B::division()->void {
 		}
 	}
 	file.close();
-
 	if (lines.size()) {
 		count_of_files++;
 		make_file(to_string(count_of_files) + ".txt");
